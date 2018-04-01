@@ -7,15 +7,8 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
 import java.util.Timer;
 import java.util.TimerTask;
-
-/**
- * Created by Jack on 2018/4/1.
- */
 
 public class SplashActivity extends AppCompatActivity{
     @Override
