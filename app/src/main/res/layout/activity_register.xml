@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--这里的布局是放置 1 个 ImageView 控件，用于显示用户头像；
+  3 个 EditText 控件，用于输入用户名、密码、再次输入密码；
+  1 个 Button 控件作为注册按钮-->
+<!--修改 activity_register.xml 为 LinearLayout 布局-->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/activity_register"
@@ -13,6 +17,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25dp"
         android:src="@drawable/default_icon" />
+    <!--三个编辑框-->
     <EditText
         android:id="@+id/et_username"
         android:layout_width="fill_parent"

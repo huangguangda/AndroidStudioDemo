@@ -7,14 +7,22 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class SplashActivity extends AppCompatActivity{
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class SplashActivity extends AppCompatActivity {
+    @BindView(R.id.tv_version)
+    TextView tvVersion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        ButterKnife.bind(this);
         //设置此界面为
         // 竖屏
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -24,8 +32,8 @@ public class SplashActivity extends AppCompatActivity{
     private void init() {
         TextView tv_version = findViewById(R.id.tv_version);
         try {
-            PackageInfo packageInfo = getPackageManager().getPackageInfo(getPackageName(),0);
-            tv_version.setText("version:"+packageInfo.versionName);
+            PackageInfo packageInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            tv_version.setText("version:" + packageInfo.versionName);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
             tv_version.setText("version");
@@ -36,13 +44,13 @@ public class SplashActivity extends AppCompatActivity{
             @Override
             public void run() {
                 //发送intent实现页面跳转，第一个参数为当前页面的context，第二个参数为要跳转的主页
-                Intent intent = new Intent(SplashActivity.this,MainActivity.class);
+                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(intent);
                 //跳转后关闭当前欢迎页面
                 SplashActivity.this.finish();
             }
         };
         //调度执行timerTask，第二个参数传入延迟时间（毫秒）
-        timer.schedule(timerTask,3000);
+        timer.schedule(timerTask, 3000);
     }
 }
