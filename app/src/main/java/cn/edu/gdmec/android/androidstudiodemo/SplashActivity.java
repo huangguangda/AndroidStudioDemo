@@ -17,7 +17,6 @@ import butterknife.ButterKnife;
 public class SplashActivity extends AppCompatActivity {
     @BindView(R.id.tv_version)
     TextView tvVersion;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,7 +27,6 @@ public class SplashActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         init();
     }
-
     private void init() {
         TextView tv_version = findViewById(R.id.tv_version);
         try {

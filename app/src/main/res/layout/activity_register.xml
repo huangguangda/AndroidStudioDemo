@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--注册界面-->
 <!--这里的布局是放置 1 个 ImageView 控件，用于显示用户头像；
   3 个 EditText 控件，用于输入用户名、密码、再次输入密码；
   1 个 Button 控件作为注册按钮-->
@@ -78,7 +79,7 @@
         android:layout_marginRight="35dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/register_selector"
-        android:text="注册"
+        android:text="注 册"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
 </LinearLayout>
