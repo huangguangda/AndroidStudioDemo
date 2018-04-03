@@ -7,29 +7,24 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
-
 import java.util.Timer;
 import java.util.TimerTask;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
 public class SplashActivity extends AppCompatActivity {
-    @BindView(R.id.tv_version)
-    TextView tvVersion;
+    private TextView tv_version;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        ButterKnife.bind(this);
         //设置此界面为
         // 竖屏
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         init();
     }
     private void init() {
-        TextView tv_version = findViewById(R.id.tv_version);
+        tv_version = findViewById(R.id.tv_version);
         try {
+            //获取程序包信息
             PackageInfo packageInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
             tv_version.setText("version:" + packageInfo.versionName);
         } catch (PackageManager.NameNotFoundException e) {

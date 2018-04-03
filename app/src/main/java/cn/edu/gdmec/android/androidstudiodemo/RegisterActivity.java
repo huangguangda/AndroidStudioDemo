@@ -48,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
         btn_register=findViewById(R.id.btn_register);
         et_user_name=findViewById(R.id.et_user_name);
         et_psw=findViewById(R.id.et_psw);
-        et_psw_again=findViewById(R.id.et_pwd_again);
+        et_psw_again=findViewById(R.id.et_psw_again);
         tv_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

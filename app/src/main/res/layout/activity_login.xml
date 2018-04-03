@@ -9,6 +9,7 @@
     <!--标题栏-->
     <include layout="@layout/main_title_bar"></include>
     <ImageView
+        android:id="@+id/iv_head"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginTop="25dp"
@@ -69,7 +70,7 @@
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:gravity="center_horizontal"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
         <TextView
             android:id="@+id/tv_register"
             android:layout_width="0dp"
