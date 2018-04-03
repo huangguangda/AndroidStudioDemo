@@ -12,13 +12,11 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import cn.edu.gdmec.android.androidstudiodemo.utils.MD5Utils;
-
 /**
  * Created by Jack on 2018/4/3.
  */
-public class RegisterActivity extends AppCompatActivity{
+public class RegisterActivity extends AppCompatActivity {
     private TextView tv_main_title;//标题
     private TextView tv_back;//返回按钮
     private Button btn_register;//注册按钮
@@ -130,7 +128,7 @@ public class RegisterActivity extends AppCompatActivity{
      * 保存账号和密码到SharedPreferences中SharedPreferences
      */
     private void saveRegisterInfo(String userName,String psw){
-        String md5Psw= MD5Utils.md5(psw);//把密码用MD5加密
+        String md5Psw = MD5Utils.md5(psw);//把密码用MD5加密
         //loginInfo表示文件名, mode_private SharedPreferences sp = getSharedPreferences( );
         SharedPreferences sp=getSharedPreferences("loginInfo", MODE_PRIVATE);
         //获取编辑器， SharedPreferences.Editor  editor -> sp.edit();
