@@ -13,9 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import cn.edu.gdmec.android.androidstudiodemo.utils.MD5Utils;
-/**
- * Created by Jack on 2018/4/3.
- */
+
 public class RegisterActivity extends AppCompatActivity {
     private TextView tv_main_title;//标题
     private TextView tv_back;//返回按钮
