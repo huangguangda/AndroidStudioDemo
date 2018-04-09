@@ -1,8 +1,9 @@
 package cn.edu.gdmec.android.androidstudiodemo;
 
 import android.annotation.SuppressLint;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,7 +11,16 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+import cn.edu.gdmec.android.androidstudiodemo.Fragment.CourseFragment;
+import cn.edu.gdmec.android.androidstudiodemo.Fragment.ExercisesFragment;
+import cn.edu.gdmec.android.androidstudiodemo.Fragment.MyinfoFragment;
+
+/*
+* FragmentManager manager = getSupportFragmentManager();
+* FragmentTransaction transaction = manager.beginTransaction();
+* transaction.add(R.id.main_body,new CourseFragment()).commit();
+* */
+public class MainActivity extends FragmentActivity implements View.OnClickListener{
     //来自main_title_bar.xml
     private TextView tv_main_title;//标题
     private TextView tv_back;//返回按钮
@@ -44,7 +54,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         initView();
+        setMain();
+    }
+    //用于打开初始页面
+    private void setMain() {
+        //getSupportFragmentManager() -> beginTransaction() -> add -> (R.id.main_boy,显示课程 new CourseFragment()
+        this.getSupportFragmentManager().beginTransaction().add(R.id.main_body,new CourseFragment()).commit();
     }
 
     private void setSelectStatus(int index) {
@@ -108,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bottom_bar_exercises_btn.setOnClickListener(this);
         bottom_bar_myinfo_btn.setOnClickListener(this);
         //技巧
-        tv_back.setVisibility(View.GONE);
+        //tv_back.setVisibility(View.GONE);
         tv_main_title.setText("博学谷课程");
         title_bar.setBackgroundColor(Color.parseColor("#30B4FF"));
 
@@ -118,12 +135,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bottom_bar_course_btn:
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_body,new CourseFragment()).commit();
                 setSelectStatus(0);
                 break;
             case R.id.bottom_bar_exercises_btn:
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_body,new ExercisesFragment()).commit();
                 setSelectStatus(1);
                 break;
             case R.id.bottom_bar_myinfo_btn:
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_body,new MyinfoFragment()).commit();
                 setSelectStatus(2);
                 break;
         }
