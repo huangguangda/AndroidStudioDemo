@@ -11,6 +11,7 @@
         android:layout_height="match_parent">
         <!--标题栏-->
         <include layout="@layout/main_title_bar" />
+        <!--放置Fragment的main_body-->
         <RelativeLayout
             android:id="@+id/main_body"
             android:background="@android:color/white"

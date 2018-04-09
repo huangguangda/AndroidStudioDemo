@@ -1,6 +1,5 @@
 package cn.edu.gdmec.android.androidstudiodemo;
 
-import android.annotation.SuppressLint;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.support.v4.app.FragmentActivity;
@@ -100,7 +99,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         }
     }
 
-    @SuppressLint("WrongViewCast")
     private void initView() {
         //标题显示
         tv_back=findViewById(R.id.tv_back);
