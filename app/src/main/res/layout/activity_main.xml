@@ -9,6 +9,7 @@
         android:background="@android:color/white"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <!--标题栏-->
         <include layout="@layout/main_title_bar" />
         <RelativeLayout
             android:id="@+id/main_body"
@@ -104,7 +105,7 @@
              android:layout_centerHorizontal="true"
              android:layout_marginTop="3dp"
              android:id="@+id/bottom_bar_image_myinfo"
-             android:src="@drawable/main_course_icon"/>
+             android:src="@drawable/main_my_icon"/>
      </RelativeLayout>
  </LinearLayout>
 </RelativeLayout>
