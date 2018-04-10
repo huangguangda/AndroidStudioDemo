@@ -9,18 +9,19 @@ import android.view.ViewGroup;
 import cn.edu.gdmec.android.androidstudiodemo.R;
 
 
-public class ExercisesFragment extends Fragment  {
+public class ExercisesFragment extends Fragment {
+
+
+    public ExercisesFragment() {
+        // Required empty public constructor
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_exercises, null);
-    }
-
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_exercises, container, false);
     }
 
 }
