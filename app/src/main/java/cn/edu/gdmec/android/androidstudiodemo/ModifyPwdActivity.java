@@ -91,7 +91,6 @@ public class ModifyPwdActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sp.edit();
         editor.putString(userName,md5Pwd);
         editor.commit();
-
     }
 
     private String readPwd() {
