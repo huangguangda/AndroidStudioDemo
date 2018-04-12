@@ -15,12 +15,13 @@ import android.widget.Toast;
 import cn.edu.gdmec.android.androidstudiodemo.LoginActivity;
 import cn.edu.gdmec.android.androidstudiodemo.R;
 import cn.edu.gdmec.android.androidstudiodemo.SettingActivity;
+import cn.edu.gdmec.android.androidstudiodemo.UserInfoActivity;
 import cn.edu.gdmec.android.androidstudiodemo.utils.AnalysisUtils;
 
 
 public class MyinfoFragment extends Fragment {
 
-    private ImageView iv_head_icon;
+    private ImageView iv_head_icon;//
     private TextView tv_user_name;
     private LinearLayout ll_head;
     private RelativeLayout rl_course_history;
@@ -47,8 +48,8 @@ public class MyinfoFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (AnalysisUtils.readLoginStatus(getActivity())) {
-                    /*Intent intent = new Intent(getActivity(), UserInfoActivity.class);
-                    getActivity().startActivity(intent);*/
+                    Intent intent = new Intent(getActivity(), UserInfoActivity.class);
+                    getActivity().startActivity(intent);
                 } else {
                     Intent intent = new Intent(getActivity(), LoginActivity.class);
                     //startActivity(intent);  若是登录完自动跳转到课程界面，则直接用这个方法即可，这里修改以防后面需要
