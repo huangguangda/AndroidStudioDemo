@@ -20,7 +20,6 @@ import cn.edu.gdmec.android.androidstudiodemo.utils.MD5Utils;
  */
 
 public class FindPwdActivity extends AppCompatActivity {
-
     private TextView tv_back;
     private TextView tv_main_title;
     private RelativeLayout rl_title_bar;
