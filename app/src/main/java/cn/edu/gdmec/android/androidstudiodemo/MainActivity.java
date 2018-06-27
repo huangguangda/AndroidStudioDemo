@@ -153,7 +153,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         bottom_bar_image_exercises.setImageResource(R.drawable.main_exercises_icon);
         bottom_bar_image_myinfo.setImageResource(R.drawable.main_my_icon);
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
